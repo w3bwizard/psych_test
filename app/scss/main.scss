@@ -18,15 +18,23 @@
   width: 100vw;
   height: 100vh;
   background-color: yellowgreen;
+  @media screen and (orientation: portrait) {
+    flex-direction: column;
+  }
 }
 
 .main_menu {
+  padding: 16px;
+  display: flex;
+  justify-content: center;
   background-color: #262626;
   width: 80px;
   height: 100%;
   flex-shrink: 0;
   @media screen and (orientation: portrait) {
-    width: 40px;
+    width: 100%;
+    height: 60px;
+    order: -1;
   }
 }
 
@@ -47,6 +55,13 @@
 
 .test__row + .test__row {
   margin-top: 16px;
+}
+
+.test__row :nth-child(3),
+.test__row :nth-child(4) {
+  @media screen and (orientation: portrait) {
+    margin-top: 16px;
+  }
 }
 
 .test__wrapper {
@@ -77,12 +92,6 @@
   }
 }
 
-.psych + .psych {
-  @media screen and (orientation: portrait) {
-    margin-top: 16px;
-  }
-}
-
 .psych__img {
   display: block;
   object-fit: cover;
@@ -95,4 +104,45 @@
 .psych__img:hover {
   box-shadow: 0 0 6px #0a0a0a;
   border-radius: 0;
+}
+
+/* Burger */
+.burger {
+  position: relative;
+  width: 44px;
+  height: 24px;
+  background-color: transparent;
+  border: 0;
+  outline: 0;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  margin-left: -8px;
+  &:hover .burger__line {
+    background-color: #cccccc;
+  }
+}
+.burger__line {
+  display: block;
+  width: 100%;
+  height: 4px;
+  background-color: #b9b9b9;
+  border-radius: 4px;
+  transition: transform 0.2s linear;
+}
+.burger__line:nth-child(1) {
+  position: absolute;
+  top: 0;
+}
+.burger__line:nth-child(3) {
+  position: absolute;
+  bottom: 0;
+}
+.burger.active .burger__line:nth-child(2) {
+  transform: scale(0);
+}
+.burger.active .burger__line:nth-child(1) {
+  transform: rotate(45deg) translate(14px);
+}
+.burger.active .burger__line:nth-child(3) {
+  transform: rotate(-45deg) translate(14px);
 }
