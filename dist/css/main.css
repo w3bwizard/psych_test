@@ -345,6 +345,33 @@ li {
 /* Подключение шрифта*/
 /*======================================================================*/
 /*======================================================================*/
+/* Подключение шрифта*/
+/*======================================================================*/
+/*======================================================================*/
+@font-face {
+  font-family: "Exo2";
+  font-display: swap;
+  src: url("../../fonts/Exo2-Light.woff2") format("woff2"), url("../../fonts/Exo2-Light.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Exo2";
+  font-display: swap;
+  src: url("../../fonts/Exo2-Regular.woff2") format("woff2"), url("../../fonts/Exo2-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Exo2";
+  font-display: swap;
+  src: url("../../fonts/Exo2-Medium.woff2") format("woff2"), url("../../fonts/Exo2-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+}
+
 /* header */
 /* footer */
 /* Main */
@@ -364,24 +391,6 @@ li {
 @media screen and (orientation: portrait) {
   .wrapper {
     flex-direction: column;
-  }
-}
-
-.main_menu {
-  padding: 16px;
-  display: flex;
-  justify-content: center;
-  background-color: #262626;
-  width: 80px;
-  height: 100%;
-  flex-shrink: 0;
-}
-
-@media screen and (orientation: portrait) {
-  .main_menu {
-    width: 100%;
-    height: 60px;
-    order: -1;
   }
 }
 
@@ -457,7 +466,30 @@ li {
   border-radius: 0;
 }
 
-/* Burger */
+/* main menu */
+.main_menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 16px 0;
+  background-color: #262626;
+  width: 80px;
+  height: 100%;
+  flex-shrink: 0;
+}
+
+@media screen and (orientation: portrait) {
+  .main_menu {
+    flex-direction: row;
+    padding: 0 8px 0 16px;
+    width: 100%;
+    height: 60px;
+    order: -1;
+  }
+}
+
+/* end main menu */
+/* burger */
 .burger {
   position: relative;
   width: 44px;
@@ -504,5 +536,66 @@ li {
 .burger.active .burger__line:nth-child(3) {
   transform: rotate(-45deg) translate(14px);
 }
+
+/* end burger */
+/* test_menu */
+.test_menu {
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+@media screen and (orientation: portrait) {
+  .test_menu {
+    margin: 0;
+    margin-left: auto;
+    flex-direction: row;
+  }
+}
+
+/* end test_menu */
+/* btn */
+@media screen and (orientation: landscape) {
+  .btn + .btn {
+    margin-top: 6px;
+  }
+}
+
+@media screen and (orientation: portrait) {
+  .btn + .btn {
+    margin-left: 6px;
+  }
+}
+
+.btn {
+  width: 66px;
+  height: 46px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-family: Exo2;
+  font-size: 15px;
+  color: #171717;
+  transition: 0.2s linear;
+}
+
+.nextset_btn {
+  border: 1px solid #0c3c0c;
+  background-color: #2f7b1a;
+}
+
+.nextset_btn:hover {
+  background-color: #1e600c;
+}
+
+.return_btn {
+  background-color: #934343;
+  border: 1px solid #421b1b;
+}
+
+.return_btn:hover {
+  background-color: #9f3333;
+}
+
+/* end btn #934343*/
 
 /*# sourceMappingURL=main.css.map */
